@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //    let fun = function(params) {
+    //        console.log('11')
+    //    }
+    let fun = (a)=>{
+        console.log('我是箭头函数',a)
+    }
+    fun(1235)
+
+    //多形参函数
+    let fun1 = (x,y)=>{
+        console.log('我是箭头函数',x,y)
+    }
+    let fun2 = (x,y)=>x+y;
+    fun1(1235,444)
+    console.log( fun2(12,23))
+    </script>
+</body>
+</html>

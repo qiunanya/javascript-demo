@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //  includes():判断是否包含字符串
+    //  startsWith():判断是否以自定字符串开头
+    //  endsWith():判断是否以指定字符串结尾
+    //  repeat():指定字符串重复次数
+
+     let  str = 'sh'
+     console.log(str.includes('f'))
+     console.log(str.startsWith('s'))
+     console.log(str.endsWith('z'))
+     console.log(str.repeat(4))
+
+     let i = 22
+     Number.isFinite(i) //判断是否是有限大的数
+     Number.isNaN(i) //判断是否指NaN
+     Number.isInteger(i) // 判断是否是整数
+     Number.parseInt(i) //将字符串转换为对应的数值
+     Math.trunc(i)  // 直接去除小数点部分
+
+     // 注意：
+     // 基本数据类型：修改拷贝后数据不会影响原数据
+     // 对象/数组 ：修改拷贝后的数据会影响原数据
+     
+     // es数据拷贝
+     let obj = {username: 'kobe',age:55}
+     let obj2 = obj
+     console.log(obj2)
+     obj2.username = 'qiu'
+     console.log(obj.username,obj2.username)
+    
+     // 拷贝数组/对象 没有生成新的数据而是复制了一份引用
+     let arr = [1,555,{username:'sha',age:22}]
+     let arr2 = arr
+     arr2[0] = 'abdc'
+     console.log(arr,arr2)
+
+
+    </script>
+</body>
+</html>
