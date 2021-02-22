@@ -7,6 +7,7 @@
 </head>
 <body>
     <script>
+        // ...value 多余的参数，任意长度
         let fun = (a,...value)=>{
             console.log(a,value)
         }
@@ -14,10 +15,23 @@
 
         let arr = [1,6]
         let ar = [2,3,4,5]
-
+        
         arr = [1,...ar,6]
-
         console.log(arr)
+        // 拷贝对象代码块，{}把代码划分为一块，内部代码外部可见可用
+        {
+            // 对象拷贝
+            let obj = {
+                name: '邱南亚',
+                height: 126,
+                weight: '151kg'
+            }, obj1 = {}, obj2 = {age: 21}
+            // 空对象拷贝也包括所有属性
+            obj1 = {...obj}    
+            console.log(obj1);
+            obj2 = {...obj,obj2}
+            console.log(obj2);
+        }
     </script>
 </body>
 </html>

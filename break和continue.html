@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script >
+        //  break 关键字可以用来退出switch循环语句 和 for循环
+        for (let index = 0; index < 5; index++) {
+            if(index == 2){
+                break;
+            }
+            console.log('break', index);
+        }
+        // continue 可以用了跳出当次循环，继续执行程序
+        for (let index = 0; index < 5; index++) {
+            if(index == 2){
+                continue;
+            }
+            console.log('continue', index);
+        }
+    </script>
+</body>
+</html>
