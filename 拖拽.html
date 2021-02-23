@@ -1,0 +1,112 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-02-23 16:08:09
+ * @LastEditTime: 2021-02-23 17:37:25
+ * @LastEditors: Please set LastEditors
+ * @Description: 拖拽页面
+ * @FilePath: \javascript-demo\拖拽.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        #box1{
+            width: 100px;
+            height: 100px;
+            border-color: aquamarine;
+            border-style: solid;
+            cursor: move;
+            background-color:pink;
+            z-index: 100;
+            position: absolute;
+        }
+        #box2{
+            width: 100px;
+            height: 100px;
+            border-color: rgb(230, 203, 52);
+            border-style: solid;
+            position: absolute;
+            cursor: move;
+            background-color: skyblue;
+            position: absolute;
+            left: 200px;
+            top: 200px;
+        }
+    </style>
+    <script>
+        window.onload = function (params) {
+            /**
+             * @description: 拖拽流程
+             * 1、鼠标移到元素上时开始拖拽
+             * 函数：onmousedown属性用来获取或设置当前元素的mousedown事件的事件处理函数.
+             * 2、拖拽元素任意位置
+             * 函数：onmousemove属性用来获取或设置当前元素的mousemove事件的事件处理函数.
+             * 3、鼠标松开时结束拖拽，被拖拽元素固定在当前位置
+             * 函数：onmouseup属性用来获取或设置当前元素的mouseup事件的事件处理函数.
+             *      当用户在当前元素上放开鼠标某个按键时会触发mouseup事件.
+             * @param {*}
+             * @return {*}
+             */   
+            let box1 = document.getElementById('box1')
+            // 0.1鼠标点击事件
+            box1.onmousedown = function (eventone) {
+                // 对付ie8 拖拽事件 , 捕获点击全局事件
+                box1.setCapture && box1.setCapture()
+                
+                eventone = eventone || window.event
+                /**
+                 * @description: 
+                 *  修改：改善用户体验, 在点击时求出div偏移量, 解决鼠标点击位置固定在左上角问题
+                 *  div的偏移量 鼠标event.clientX - 元素.offsetleft
+                 *  div的偏移量 鼠标event.clientY - 元素.offsettop
+                 * @param {*}
+                 * @return {*}
+                 */    
+                  let offleft = eventone.clientX - box1.offsetLeft;
+                  let offtop = eventone.clientY - box1.offsetTop;           
+
+                //alert('拖拽开始了')
+                // 0.2鼠标移动事件： 为document绑定一个onmousemove事件
+                document.onmousemove = function (event) {
+                    //当鼠标移动时被拖拽元素跟随鼠标移动onmousemove
+                    event = event || window.event // 兼容性写法
+                    let left = event.clientX - offleft, 
+                        top = event.clientY - offtop;
+                    console.log(`left: ${left}px, top: ${top}px`);
+                    // 修改box1的位置
+                    box1.style.left = left + "px";
+                    box1.style.top = top + "px"; 
+                }
+                
+                // 0.3鼠标松开事件：鼠标松开时结束拖拽，被拖拽元素固定在当前位置
+                // 注意：document绑定，排除被拖拽元素在底层时还会移动问题
+                document.onmouseup = function () {
+                    // 将鼠标移动事件置为null被绑定元素不在跟着鼠标移动
+                    document.onmousemove = null
+
+                    // 取消document.onmouseup事件
+                    document.onmouseup = null
+                    
+                    // 针对ie8  当鼠标松开时取消事件的捕获
+                    box1.releaseCapture && box1.releaseCapture()
+                }
+
+                // 优化：当拖拽网页中内容时，浏览器会默认去搜索引擎中搜索内容
+                // 问题： 倒是拖拽异常问题
+                // 解决方案： 通过return false 来解决, 对ie8 不生效
+                return false
+
+            }
+        }
+    </script>
+</head>
+<body>
+    我是一段文字
+    <div id="box1">我是被拖拽元素box1</div>
+    <div id="box2">box2</div>
+</body>
+</html>
