@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-02-23 20:13:06
- * @LastEditTime: 2021-02-23 21:44:09
+ * @LastEditTime: 2021-02-24 20:00:49
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \javascript-demo\代码健
@@ -18,10 +18,27 @@
 <body>
     <script>
         // 提升空间： 设计模式，良好的编程思维、有项目架构经验、工程化，组件库、工具库
-        //1、函数传参健壮性
-        //2、defineProperty控制对象属性是否更改
+        // 1、函数传参健壮性, 易错代码放在try中包裹
+        let resultAdd = (x, y) =>{
+            if(typeof x === 'number' && typeof y === 'number'){
+                return x + y;
+            }else{
+                throw new Error('x or y is not a number')
+            }
+        }
+        // 调用 resultAdd
+        resultAdd(1, 5555)
+        //2、defineProperty控制对象属性不能更改
+        // this.$router
+        // vue.prototype.$router = _router;
+        // Object.defineProperties(vue.prototype, '$router', {
+        //     get: function () {
+        //         return _router;
+        //     }
+        // })
         //3、模块检测
-        //4、 享元模式
+        //4、享元模式,  例如：在开学季,家里蹲大学,有大量的同学需要入学登记
+        
     </script>
 </body>
 </html>
