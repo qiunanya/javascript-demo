@@ -1,0 +1,34 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-03-01 22:29:06
+ * @LastEditTime: 2021-03-01 22:33:47
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \javascript-demo\原型链.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Fn(params) {
+            this.test1 = function (params) {
+                console.log('test1()', this);
+            }
+        }
+        Fn.prototype.test2 = function (params) {
+            console.log('test2()');
+        }
+        let fn = new Fn();
+        fn.test1()
+        fn.test2()
+        console.log(fn.toString());
+        
+    </script>
+</body>
+</html>
