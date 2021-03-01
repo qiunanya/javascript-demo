@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 原型链是用来查找对象的属性，属性上一般不建议添加属性
+        function Fn(params) {
+            
+        }
+        Fn.prototype.a = 'xxx'
+        let fn1 = new Fn()
+        console.log(fn1.a, fn1);
+        let fn2 = new Fn()
+        fn2.a = 'yyy'
+        console.log(fn1.a, fn2.a, fn2);
+        // 案例：属性添加到函数对象，通过原型链修改响应的属性, es6箭头函数
+        function Person(name, age){
+            this.name = name;
+            this.age = age;
+        }
+        // 修改属性
+        Person.prototype.setName = function (name) {
+            this.name = name
+        }
+        let p1 = new Person('Qiu', 25)
+            p1.setName('张三')
+            console.log(p1,11);
+        let p2 = new Person('Mei', 21)
+            p2.setName('Tom')
+            console.log(p2);
+            console.log(p1._proto_ === p2._proto_);
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-03-01 23:35:26
+ * @LastEditTime: 2021-03-01 23:43:08
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \javascript-demo\instanceof探索.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/instanceof">
+       参考网址： https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/instanceof
+    </a>
+    <script>
+        // instanceof 运算符用于检测构造函数的 prototype 属性是否出现在某个实例对象的原型链上。
+        // 构造函数Car
+        function Car(make, model, year) {
+            this.make = make;
+            this.model = model;
+            this.year = year;
+        }
+        const auto = new Car('Honda', 'Accord', 1998);
+
+        console.log(auto instanceof Car);
+        // expected output: true
+
+        console.log(auto instanceof Object);
+        // expected output: true
+    </script>
+</body>
+</html>
