@@ -1,0 +1,63 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-03-02 20:10:54
+ * @LastEditTime: 2021-03-02 22:26:58
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \javascript-demo\css3.0动画\CSS animations.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* -moz-    火狐等使用Mozilla浏览器引擎的浏览器
+          -webkit-  Safari, 谷歌浏览器等使用Webkit引擎的浏览器
+            -o-     Opera浏览器(早期)
+            -ms-    Internet Explorer (不一定) 
+
+           这些前缀并非所有都是需要的，但通常你加上这些前缀不会
+           有任何害处——只要记住一条，把不带前缀的版本放到最后一行。    
+        */
+        .p_bo{
+            /* 
+             *  注意: 这里的示例没有在CSS动画属性上使用任何前缀，Webkit内核浏览器或
+             *        者早期版本浏览器可能需要前缀，下面的实例包含了-webkit-前缀。
+             */
+            /* 设置动画一个周期的时长。 */
+            -o-animation-duration: 3s;
+            -moz-animation-duration: 3s;
+            -webkit-animation-duration: 3s;
+            animation-duration: 3s;
+            /* 指定由@keyframes描述的关键帧名称 */
+            -o-animation-name: slidein;
+            -moz-animation-name: slidein;
+            -webkit-animation-name: slidein;
+            animation-name: slidein;
+        }
+        @keyframes slidein{
+            from{
+                margin-left: 30%;
+                width: 60%;
+            }
+            to{
+                margin-left: 0%;
+                width: 60%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h3>该例中 p 元素由浏览器窗口右边滑至左边</h3>
+    <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/
+      CSS_Animations/Using_CSS_animations#browser_compatibility">
+      https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Animations/
+      Using_CSS_animations#browser_compatibility参考网址：</a>
+    <p class="p_bo">The Caterpillar and Alice looked at each other for some time in silence:
+        at last the Caterpillar took the hookah out of its mouth, and addressed
+        her in a languid, sleepy voice.</p>
+</body>
+</html>
