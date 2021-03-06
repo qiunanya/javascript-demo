@@ -1,0 +1,75 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-03-05 22:04:49
+ * @LastEditTime: 2021-03-06 10:19:54
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \javascript-demo\css3.0动画\transform动画.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        /* #circle{
+            width: 300px;
+            height: 300px;
+            background-color: royalblue;
+            border-radius: 50%;
+            line-height: 300px;
+            color: #fff;
+           // transform: rotate(60deg);
+        } */
+        img{
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            cursor: pointer;
+            /* transform: rotate(60deg); */
+        }
+    </style>
+</head>
+<body>
+    <div id="circle">
+        <img id="img" src="../img/mydog.jpg" alt="" srcset="">
+    </div>
+    <script>
+        let rotateVal = 0, // 旋转角度
+            interVal = null; // 定时器
+        // 页面初始化数据加载，绑定dom
+        window.onload = function (params) {
+            console.log(params);
+            //  网页加载完成后开始运行旋转函数rotate
+            rotate()
+            // 鼠标悬浮在图片上时，停止旋转，即清除定时器
+            let imgEvent =  window.document.getElementById('img')
+            imgEvent.onmousemove = function(params) {
+                clearInterval(interVal)
+            }
+            // 鼠标离开图片时，继续旋转，即继续运行定时器
+            imgEvent.onmouseleave = function(params) {
+                rotate()
+            }
+        }
+        // 设置定时器
+        function rotate(params) {
+            interVal = setInterval(function(params) {
+                let img = window.document.getElementById('img')
+                rotateVal += 0.1 // 角度0+1开始
+                // 设置旋转属性(顺时针)
+                img.style.transform = `rotate(${rotateVal}deg)`
+                // 设置旋转属性（逆时针）
+                //img.style.transform = `rotate(-${rotateVal}deg)`
+                // 设置旋转时的动画， 匀速0.1s
+                img.style.transition = `0.1s linear`;
+            })
+        }
+    </script>
+</body>
+</html>
