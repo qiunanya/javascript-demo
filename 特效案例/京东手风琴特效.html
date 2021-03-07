@@ -1,0 +1,151 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-03-07 23:17:52
+ * @LastEditTime: 2021-03-08 01:17:29
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \javascript-demo\特效案例\京东手风琴特效.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: #f6f6f6;
+        }
+        .box ul li{
+            float: left;
+            cursor: pointer;
+            list-style: none;
+            width: 180px;
+            height: 296px;
+            background-color: #fff;
+            /* box-shadow: 3px(水平方向) 2px（垂直方向） 30px（范围大小）; */
+            box-shadow: 3px 2px 30px rgba(0, 0, 0, 0.1);
+            color: #7272f5;
+            position: relative;
+            -webkit-transition: all 1s ease-out;
+            -o-transition: all 1s ease-out;
+            -moz-transition: all 1s ease-out;
+            transition: all 1s ease-out;
+        }
+        .box ul li .title, .sub {
+            width: 100%;
+            height: 30px;
+            text-align: center;
+        }
+        .box ul li .title{
+            margin-top: 30px;
+            font-size: 16px;
+            color: #333;
+        }
+        .box ul li .sub{
+            font-size: 14px;
+            color: #666;
+            text-align: center;
+        }
+        .box ul li img{
+            width: 150px;
+            height: 150px;
+            text-align: center;
+            position: absolute;
+            -webkit-transition: all 1s ease-out;
+            -o-transition: all 1s ease-out;
+            -moz-transition: all 1s ease-out;
+            transition: all 1s ease-out;
+        }
+        .box ul li .go{
+            display: none;
+        }
+        .box ul .on{
+            background: url('../img/jd/bg.jpg') no-repeat;
+            width: 370px;
+            padding-left: 20px;
+        }
+        .box ul .on .title{
+            text-align: left;
+            color: #fff;
+        }
+        .box ul .on .sub{
+            text-align: left;
+            color: #fff;
+        }
+        .box ul .on img{
+            width: 180px;
+            height: 180px;
+            right: 20px;
+            bottom: 20px;
+        }
+        .box ul .on .go{
+            display: block;
+            margin-top: 5px;
+            width: 70px;
+            height: 34px;
+            border: 2px solid #fff;
+            /* 圆角是高+两边的边框线  34px+2px+2px */
+            border-radius: 38px; 
+            text-align: center;
+            line-height: 34px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+   <div class="box">
+        <ul>
+            <li id="li_box">
+                <div class="title">新机首发</div>
+                <div class="sub">有新机更有范</div>
+                <div class="go">GO</div>
+                <img src="../img/jd/1.jpg" alt="" srcset="">
+            </li>
+            <li>
+                <div class="title">游戏手机</div>
+                <div class="sub">白条24期免息</div>
+                <div class="go">GO</div>
+                <img src="../img/jd/2.jpg" alt="" srcset="">
+            </li>
+            <li>
+                <div class="title">手机好店</div>
+                <div class="sub">爆款现货抢购</div>
+                <div class="go">GO</div>
+                <img src="../img/jd/3.jpg" alt="" srcset="">
+            </li>
+            <li>
+                <div class="title">京东网厅</div>
+                <div class="sub">5G套餐显示7折</div>
+                <div class="go">GO</div>
+                <img src="../img/jd/4.jpg" alt="" srcset="">
+            </li>
+            <li>
+                <div class="title">手机配件</div>
+                <div class="sub">低至9.9元</div>
+                <div class="go">GO</div>
+                <img src="../img/jd/5.jpg" alt="" srcset="">
+            </li>
+        </ul>
+   </div>
+   <script>
+       let currentLi = window.document.getElementById('li_box')
+       let currentList = window.document.getElementsByTagName('li')
+       for (let index = 0; index < currentList.length; index++) {
+            // 给标签添加事件，鼠标移入
+            currentList[index].onmousemove = function(params) {
+                currentList[index].setAttribute("class", 'on')
+            }
+            // 给标签添加事件，鼠标移出
+            currentList[index].onmouseleave = function(params) {
+                currentList[index].setAttribute("class", '')
+            }
+       }
+   </script>
+</body>
+</html>
