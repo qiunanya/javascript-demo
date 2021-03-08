@@ -1,0 +1,84 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-03-08 20:32:57
+ * @LastEditTime: 2021-03-08 21:50:34
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \javascript-demo\特效案例\五星好评.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 500px;
+            margin: 100px auto;
+        }
+        .box ul{
+            list-style: none;
+        }
+        .box ul li{
+            float: left;
+            width: 70px;
+            height: 64px;
+            line-height: 64px;
+            position: relative;
+        }
+        .box ul li span{
+            display: block;
+            width: 64px;
+            height: 64px;
+            position: absolute;
+        }
+        .box ul li .star0{
+            background: url('../img/star/1.png');
+        }
+        .box ul li .star1{
+            background: url('../img/star/2.png');
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li>
+                <span class="star1"></span>
+                <span class="star0"></span>
+            </li>
+            <li>
+                <span class="star1"></span>
+                <span class="star0"></span>
+            </li>
+            <li>
+                <span class="star1"></span>
+                <span class="star0"></span>
+            </li>
+            <li>
+                <span class="star1"></span>
+                <span class="star0"></span>
+            </li>
+            <li>
+                <span class="star1"></span>
+                <span class="star0"></span>
+            </li>
+            <li class="text">暂无评论</li>
+        </ul>
+    </div>
+    <script src="../jquery/jquery-3.0.0.min.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        $(".box ul li").click(function(params) {
+            let txtList = ['非常差', '差', '一般', '好', '非常好']
+            console.log(params, $(this).index());
+            $(this).find('.star0').css("display", "none");
+            $(this).prevAll().find('.star0').css("display", "none");
+            $(this).nextAll().find('.star0').css("display", "block");
+
+            $(".box ul .text").html(txtList[$(this).index()])
+        })
+    </script>
+</body>
+</html>
