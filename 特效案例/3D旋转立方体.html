@@ -15,17 +15,48 @@
             margin: 0 auto;
             position: relative;
             margin-top: 200px;
+            -o-transform-style: preserve-3d;
+            -webkit-transform-style: preserve-3d;
+            -moz-transform-style: preserve-3d;
             transform-style: preserve-3d;
             /* // rotate3d(x,y,z, 度数) */
             /* transform: rotate3d(1, 1, 0, 45deg); */
+            -moz-animation: runing 5s linear infinite;
+            -o-animation: runing 5s linear infinite;
+            -webkit-animation: runing 5s linear infinite;
             animation: runing 5s linear infinite;
         }
         @keyframes runing{
-            0%{transform: rotate3d(0, 0, 0, 0deg);}
-            25%{transform: rotate3d(1, 0, 1, 90deg);}
-            50%{transform: rotate3d(1, 1, 0, 180deg);}
-            75%{transform: rotate3d(0, 1, 1, 270deg);}
-            100%{transform: rotate3d(1, 1, 1, 0deg);}
+            0%{
+                -moz-transform:rotate3d(0, 0, 0, 0deg);
+                -webkit-transform:rotate3d(0, 0, 0, 0deg);
+                -o-transform:rotate3d(0, 0, 0, 0deg);
+                transform: rotate3d(0, 0, 0, 0deg);
+            }
+            25%{
+                -moz-transform: rotate3d(1, 0, 1, 90deg);
+                -webkit-transform: rotate3d(1, 0, 1, 90deg);
+                -o-transform: rotate3d(1, 0, 1, 90deg);
+                transform: rotate3d(1, 0, 1, 90deg);
+            }
+            50%{
+                -moz-transform: rotate3d(1, 1, 0, 180deg);
+                -webkit-transform: rotate3d(1, 1, 0, 180deg);
+                -o-transform: rotate3d(1, 1, 0, 180deg);
+                transform: rotate3d(1, 1, 0, 180deg);
+            }
+            75%{
+                -moz-transform: rotate3d(0, 1, 1, 270deg);
+                -webkit-transform: rotate3d(0, 1, 1, 270deg);
+                -o-transform: rotate3d(0, 1, 1, 270deg);
+                transform: rotate3d(0, 1, 1, 270deg);
+            }
+            100%{
+                -moz-transform: rotate3d(1, 1, 1, 0deg);
+                -webkit-transform: rotate3d(1, 1, 1, 0deg);
+                -o-transform: rotate3d(1, 1, 1, 0deg);
+                transform: rotate3d(1, 1, 1, 0deg);
+            }
         }
         #box div{
             width: 300px;
@@ -35,6 +66,9 @@
             border: 1px solid #000;
             text-align: center;
             font-size: 30px;
+            -webkit-transition: all 3s ease;
+            -o-transition: all 3s ease;
+            -moz-transition: all 3s ease;
             transition: all 3s ease;
             overflow: hidden;
         }
