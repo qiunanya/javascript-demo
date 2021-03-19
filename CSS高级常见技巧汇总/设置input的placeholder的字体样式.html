@@ -1,0 +1,41 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-03-19 10:26:49
+ * @LastEditTime: 2021-03-19 11:02:20
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \javascript-demo\CSS高级常见技巧汇总\设置input的placeholder的字体样式.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input::-webkit-input-placeholder {    /* Chrome/Opera/Safari */
+            color: red;
+        }
+        input::-moz-placeholder { /* Firefox 19+ */
+            color: red;
+        }
+        input:-ms-input-placeholder { /* IE 10+ */
+            color: red;
+        }
+        input:-moz-placeholder { /* Firefox 18- */
+            color: red;
+        }
+        input:focus {
+            background-color: red;
+        }
+        input{
+            /* border: none; */
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" placeholder="请设置用户名">
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-03-19 11:25:13
+ * @LastEditTime: 2021-03-19 11:28:08
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \javascript-demo\CSS高级常见技巧汇总\sodifhsohfdoh.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> outline属性的妙用技巧</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        ul {
+            list-style: none;
+            width: 600px;
+            margin: auto;
+        }
+        
+        li {
+            padding: 10px;
+            border: 10px solid pink;
+            outline-offset: -10px;
+        }
+        li+li{
+            margin-top:-10px;
+        }
+        li:hover{
+            /* 区别: outline不计算大小 border计算大小 */
+            /* border:10px solid gold; */
+            outline:10px solid gold;
+        }
+    </style>
+</head>
+<body>
+    区别: outline不计算大小 border计算大小
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+</body>
+</html>

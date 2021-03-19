@@ -1,0 +1,48 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-03-19 13:55:13
+ * @LastEditTime: 2021-03-19 14:22:52
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \javascript-demo\CSS高级常见技巧汇总\隐藏文本的常用两种方法.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>隐藏文本的常用两种方法</title>
+    <style>
+        .logo {
+            width: 190px;
+            height: 80px;
+            float: left;
+            margin-top: 8px
+        }
+        
+        .logo h1 {
+            position: relative
+        }
+        
+        .logo h1 .logo-bd {
+            display: block;
+            margin-left: 22px;
+            padding-top: 58px;
+            width: 142px;
+            overflow: hidden;
+            background: url(http://img.alicdn.com/tfs/TB1_uT8a5ERMeJjSspiXXbZLFXa-143-59.png) 0 0 no-repeat;
+            /* text-indent: -9999px; */
+            font-size: 0;
+        }
+    </style>
+</head>
+<body>
+    text-indent: -9999px; 或者 font-size: 0;
+    <div class="logo">
+        <h1>
+            <a href="#" role="img" class="logo-bd clearfix">淘宝网</a>
+        </h1>
+    </div>
+</body>
+</html>
