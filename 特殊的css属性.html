@@ -1,0 +1,74 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-03-19 08:36:46
+ * @LastEditTime: 2021-03-19 08:48:26
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \javascript-demo\特殊的css属性.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .title{
+            -webkit-user-select: none; /* Chrome & Safari all */
+            -moz-user-select: none; /* Firefox all */
+            -ms-user-select: none; /* IE 10+ */
+            user-select: none;
+        }
+        div {
+            width: 100px;
+        }
+
+        p {
+            background: red;
+            font-size: 2rem;
+        }
+
+        .first {
+            white-space: nowrap;
+        }
+
+        .second {
+            white-space: pre;
+        }
+
+        .third {
+            white-space: pre-line;
+        }
+
+        .fourth {
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">贵州项目科技技术部</div>
+    <div>
+        <p class='zero'>
+    
+            Some text
+        </p>
+    
+        <p class='first'>
+    
+            Some text
+        </p>
+        <p class='second'>
+            Some text
+        </p>
+        <p class='third'>
+            Some text
+        </p>
+        <p class='fourth'>
+            Some text
+        </p>
+    </div>
+</body>
+</html>
